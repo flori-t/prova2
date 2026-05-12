@@ -71,4 +71,13 @@ final class DroneTest extends TestCase
 
         self::assertSame(Drone::STATUS_DOCKED, $drone->status());
     }
+
+    public function retire()
+    {
+        $drone = new Drone("JB", 2, Drone::STATUS_MAINTENANCE);
+
+        $drone->retire($drone);
+
+        self::assertSame(Drone::STATUS_RETIRED, $drone->status());
+    }
 }
