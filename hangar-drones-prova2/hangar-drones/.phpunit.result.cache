@@ -1,1 +1,1 @@
-{"version":2,"defects":{"Tests\\DroneTest::testflightMinutes":8,"Tests\\DroneTest::testStatus":8},"times":{"Tests\\DroneTest::testId":0.01,"Tests\\DroneTest::testflightMinutes":0,"Tests\\DroneTest::testStatus":0}}
+{"version":2,"defects":{"Tests\\DroneTest::testflightMinutes":8,"Tests\\DroneTest::testStatus":8,"Tests\\DroneTest::testtakeOff":7},"times":{"Tests\\DroneTest::testId":0.01,"Tests\\DroneTest::testflightMinutes":0,"Tests\\DroneTest::testStatus":0,"Tests\\DroneTest::testtakeOff":0}}
