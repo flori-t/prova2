@@ -41,7 +41,6 @@ final class DroneTest extends TestCase
         $drone->takeOff($drone);
 
         self::assertSame(Drone::STATUS_IN_FLIGHT, $drone->status());
-
     }
 
     public function testmarkDocked()
@@ -51,7 +50,6 @@ final class DroneTest extends TestCase
         $drone->markDocked($drone);
 
         self::assertSame(Drone::STATUS_DOCKED, $drone->status());
-
     }
 
     public function testsendToMaintenance()

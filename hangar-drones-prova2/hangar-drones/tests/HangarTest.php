@@ -9,7 +9,6 @@ use PHPUnit\Framework\TestCase;
 
 final class HangarTest extends TestCase
 {
-
     public function testCount()
     {
         $hangar = new Hangar(19);
@@ -127,7 +126,5 @@ final class HangarTest extends TestCase
         self::assertSame(["JB3"], $hangar->maintenanceDroneIds());
         self::assertSame(["JB"], $hangar->inFlightDroneIds());
         self::assertSame(["JB5"], $hangar->retiredDroneIds());
-
     }
-
 }
