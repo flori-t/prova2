@@ -44,5 +44,15 @@ final class DroneTest extends TestCase
 
     }
 
+    public function testmarkDocked()
+    {
+        $drone = new Drone("JB", 2, Drone::STATUS_IN_FLIGHT);
+
+        $drone->markDocked($drone);
+
+        self::assertSame(Drone::STATUS_DOCKED, $drone->status());
+
+    }
+
     
 }
