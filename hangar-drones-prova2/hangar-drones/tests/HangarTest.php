@@ -91,4 +91,15 @@ final class HangarTest extends TestCase
         self::assertSame(Drone::STATUS_DOCKED, $drone->status());
     }
 
+    public function testretire()
+    {
+        $hangar = new Hangar(4);
+        $drone = new Drone("JB", 2, Drone::STATUS_MAINTENANCE);
+
+        $hangar->addDrone($drone);
+        $hangar->retireDrone("JB");
+
+        self::assertSame(1, $hangar->retiredCount());
+    }
+
 }
