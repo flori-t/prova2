@@ -54,5 +54,21 @@ final class DroneTest extends TestCase
 
     }
 
-    
+    public function testsendToMaintenance()
+    {
+        $drone = new Drone("JB", 2, Drone::STATUS_DOCKED);
+
+        $drone->sendToMaintenance($drone);
+
+        self::assertSame(Drone::STATUS_MAINTENANCE, $drone->status());
+    }
+
+    public function testreturnFromMaintenance()
+    {
+        $drone = new Drone("JB", 2, Drone::STATUS_MAINTENANCE);
+
+        $drone->returnFromMaintenance($drone);
+
+        self::assertSame(Drone::STATUS_DOCKED, $drone->status());
+    }
 }
