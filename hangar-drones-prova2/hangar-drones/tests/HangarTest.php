@@ -39,4 +39,32 @@ final class HangarTest extends TestCase
         self::assertSame(1, $hangar->maintenanceCount());
     }
 
+    public function testlaunchDrone()
+    {
+        $hangar = new Hangar(4);
+
+        $drone = new Drone("JB1", 2, Drone::STATUS_DOCKED);
+
+        $hangar->addDrone($drone);
+        $hangar->launchDrone($drone);
+
+
+        self::assertSame(Drone::STATUS_IN_FLIGHT, $drone->status());
+    }
+
+    public function testlandDrone()
+    {
+        $hangar = new Hangar(4);
+        $drone = new Drone("JB1", 2, Drone::STATUS_DOCKED);
+
+        $hangar->addDrone($drone);
+        $hangar->launchDrone($drone);
+        $hangar->landDrone($drone, 20);
+
+
+        self::assertSame(22, $drone->flightMinutes());
+        self::assertSame(Drone::STATUS_MAINTENANCE, $drone->status());
+        self::assertSame(1, $hangar->maintenanceCount());
+    }
+
 }
